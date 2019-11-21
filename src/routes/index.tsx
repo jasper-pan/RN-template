@@ -7,7 +7,6 @@ import ModalScreen from '../pages/fullScreen/index'
 import ElseScreen from '../pages/fullScreen/else'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Ionicons from 'react-native-vector-icons/AntDesign';
-import My from '../'
 import { HomeIconWithBadge } from './tabbarBadge'
 
  
