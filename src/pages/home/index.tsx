@@ -2,23 +2,35 @@ import React, { useEffect, useState } from 'react';
 import {
     View,
     Text,
-    Button
+    StatusBar
 } from 'react-native';
-
+import { Modal } from '../../components/oj-toast/toast'
+import { Avatar ,Button  } from 'react-native-elements';
 const HomeScreen = (props: any) => {
-    const [name, setName] = useState('world')
-    useEffect(() => {
-        setName('android')
-    }, [])
+    const [isShowing, setShow] = useState(false)
+    const toggle = () => {
+        setShow(!isShowing)
+    }
+    console.log(isShowing)
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home {name}</Text>
+            <Avatar rounded title="MD" />
+            <StatusBar backgroundColor="black" barStyle="light-content" />
+            <Text>Homesss xxxx</Text>
+            <Modal
+                isShowing={isShowing}
+                hide={toggle} />
             <Button
+                title="toast"
+                onPress={() => toggle()}
+            />
+             <Button
                 title="Go to Details"
-                onPress={() => props.navigation.navigate('Details',{
-                    itemId: 86,
-                    otherParam: 'anything you want here',
-                  })}
+                onPress={() => props.navigation.navigate('Details')}
+            />
+            <Button
+                title="Go to Mode"
+                onPress={() =>props.navigation.navigate('MyElse')}
             />
         </View>
     );

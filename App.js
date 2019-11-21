@@ -1,9 +1,13 @@
 
 import React from 'react'
 import AppContainer from './src/routes/index.tsx'
-
+import { ThemeProvider } from 'react-native-elements';
 export default class App extends React.Component {
   render() {
-    return <AppContainer />;
+    return (
+      <ThemeProvider>
+        <AppContainer />
+      </ThemeProvider>
+    )
   }
 }
