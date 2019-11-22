@@ -39,6 +39,7 @@ export const Modal = ({ isShowing, hide }: propsType) => isShowing ?
             right: 0,
             top:height /2 -80,
             alignItems: 'center',
+            zIndex:99
         },
         content: {
             backgroundColor: 'black',

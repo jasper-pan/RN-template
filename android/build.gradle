@@ -8,8 +8,8 @@ buildscript {
         targetSdkVersion = 28
     }
     repositories {
-        google()
-        jcenter()
+       google()
+       jcenter()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:3.4.2")

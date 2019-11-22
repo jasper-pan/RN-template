@@ -26,6 +26,12 @@ const DetailPage: any = (props: any) => {
       ]
     return (
         <View  >
+            
+            <SearchBar
+        placeholder="Type Here..."
+        onChangeText={updateSearch}
+        value={search}
+      />
             <Input
                 placeholder='INPUT WITH ICON'
                 leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {
-    View,
-    Text,
     StatusBar
 } from 'react-native';
 import { Modal } from '../../components/oj-toast/toast'
-import { Avatar ,Button  } from 'react-native-elements';
+import { Container, Header, Title, Left, Icon, Right, Button, Body, Content,Text, Card, CardItem } from "native-base";
 const HomeScreen = (props: any) => {
     const [isShowing, setShow] = useState(false)
     const toggle = () => {
@@ -13,26 +11,40 @@ const HomeScreen = (props: any) => {
     }
     console.log(isShowing)
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Avatar rounded title="MD" />
-            <StatusBar backgroundColor="black" barStyle="light-content" />
-            <Text>Homesss xxxx</Text>
-            <Modal
-                isShowing={isShowing}
-                hide={toggle} />
+        <Container>
+        <Header>
+          <Left>
             <Button
-                title="toast"
-                onPress={() => toggle()}
-            />
-             <Button
-                title="Go to Details"
-                onPress={() => props.navigation.navigate('Details')}
-            />
-            <Button
-                title="Go to Mode"
-                onPress={() =>props.navigation.navigate('MyElse')}
-            />
-        </View>
+              transparent
+              onPress={() => props.navigation.openDrawer()}>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>HomeScreen</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
+          <Card>
+            <CardItem>
+              <Body>
+                <Text>Chat App to talk some awesome people!</Text>
+              </Body>
+            </CardItem>
+          </Card>
+          <Button full rounded dark
+            style={{ marginTop: 10 }}
+            onPress={() => props.navigation.navigate("Details")}>
+            <Text>Chat With People</Text>
+          </Button>
+          <Button full rounded primary
+            style={{ marginTop: 10 }}
+            onPress={() => props.navigation.navigate("My")}>
+            <Text>Goto Profiles</Text>
+          </Button>
+        </Content>
+      </Container>
     );
 }
 
